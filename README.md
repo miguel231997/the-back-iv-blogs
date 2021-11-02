@@ -48,6 +48,7 @@ _The Back IV Blogs MVP will be an application that will allow users to post anyt
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
 [Whimsical](https://whimsical.com/the-back-iv-copy-VgLjFoPHt4VZrHsUrRmHa1)
+[Figma](https://www.figma.com/file/TaMjKVIN8wbkL8HgcJZZhs/The-Back-IV?node-id=0%3A1)
 
 
 #### Component Tree
@@ -69,14 +70,16 @@ src
       |__ images
       |__ mockups
 |__ components/
-      |__ Header.jsx
-      |__ Nav.jsx
-      |__ post.jsx
-      |__ comments.jsx
+      |__ Layout.jsx
+      |__ MainContainer.jsx
       |__ signIn.jsx
       |__ signUp.jsx
+      |__ post.jsx
+      |__ comments.jsx
       |__ createPost.jsx
       |__ editPost.jsx
+      |__ PostDetails.jsx
+      |__ topics.jsx
       
 |__ services/
 
