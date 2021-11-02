@@ -2,7 +2,7 @@
 
 ## Overview
 
-_**Project Title** My project title will be The Back IV Blogs
+ My project title will be The Back IV Blogs
 
 
 <br>
