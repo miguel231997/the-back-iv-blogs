@@ -47,7 +47,7 @@ _The Back IV Blogs MVP will be an application that will allow users to post anyt
 
 > Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
-![Dummy Link](https://whimsical.com/the-back-iv-copy-VgLjFoPHt4VZrHsUrRmHa1)
+[Whimsical](https://whimsical.com/the-back-iv-copy-VgLjFoPHt4VZrHsUrRmHa1)
 
 
 #### Component Tree
@@ -109,7 +109,7 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](https://app.diagrams.net/?libs=general;uml#G19yDRBonruiUHZmWX1KB68XRyRkxtKvNw)
+[ERD](https://app.diagrams.net/?libs=general;uml#G19yDRBonruiUHZmWX1KB68XRyRkxtKvNw)
 <br>
 
 ***
