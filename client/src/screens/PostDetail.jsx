@@ -34,7 +34,7 @@ export default function PostDetail(props) {
           </div>
           <div className="content-text">
             <p>
-              <b>Quote: </b>"{post.content}"
+              <b></b>"{post.content}"
             </p>
             <Link to="/">
               <button>Home</button>
