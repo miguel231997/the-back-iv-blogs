@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 export default function Register(props) {
   const [formData, setFormData] = useState({
     first_name: '',
@@ -21,6 +22,7 @@ export default function Register(props) {
   };
 
   return (
+      
     <form
       onSubmit={(e) => {
         e.preventDefault();
@@ -64,7 +66,7 @@ export default function Register(props) {
       <label>
         Profile Picture:
         <input
-          type='image'
+          type='text'
           name='profile_picture'
           value={profile_picture}
           onChange={handleChange}
@@ -82,5 +84,6 @@ export default function Register(props) {
       <br />
       <button>Submit</button>
     </form>
+    
   );
 }

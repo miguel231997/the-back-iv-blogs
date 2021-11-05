@@ -8,7 +8,9 @@ export default function Posts(props) {
       {posts.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
-            <p>{post.name}</p>
+            <p>{post.title}</p>
+            <p>{post.content}</p>
+            <img src = {post.title} />
           </Link>
           <Link to={`/posts/${post.id}/edit`}>
             <button>edit</button>
