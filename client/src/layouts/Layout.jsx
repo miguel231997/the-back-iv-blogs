@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../p4_logo.png';
 
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props;
@@ -6,14 +7,19 @@ export default function Layout(props) {
   return (
     <div>
       <header>
-        <h1>The Back IV</h1>
+        <img src = {logo}></img>
         {currentUser ? (
           <div>
             <p>{currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (
-          <Link to='/login'>Login/Register</Link>
+          <div>
+            <div>
+              <Link to='/login'>Login</Link>
+            </div>
+          <Link to='/register'>Register</Link>
+          </div>
         )}
         <hr />
         {currentUser && (

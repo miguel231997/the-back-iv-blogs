@@ -1,28 +1,48 @@
 import api from './api-config';
 
 export const getAllPosts = async () => {
-  const resp = await api.get('/posts');
-  return resp.data;
+  try {
+    const response = await api.get("/posts");
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const getOnePost = async (id) => {
-  const resp = await api.get(`/posts/${id}`);
-  return resp.data;
+export const getPost = async (id) => {
+  try {
+    const response = await api.get(`/posts/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const postPost = async (postData) => {
-  const resp = await api.post('/posts', { post: postData });
-  return resp.data;
+export const postPost = async (post) => {
+  try {
+    const response = await api.post("/posts", post);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const putPost = async (id, postData) => {
-  const resp = await api.put(`/posts/${id}`, { post: postData });
-  return resp.data;
+export const putPost = async (id, post) => {
+  try {
+    const response = await api.put(`/posts/${id}`, post);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const deletePost = async (id) => {
-  const resp = await api.delete(`/posts/${id}`);
-  return resp;
+  try {
+    const response = await api.delete(`/posts/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const addPostToTopic = async (topicId, id) => {

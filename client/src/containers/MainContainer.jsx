@@ -8,7 +8,8 @@ import PostEdit from '../screens/PostEdit';
 import Topics from '../screens/Topics';
 import PostDetail from '../screens/PostDetail';
 
-export default function MainContainer() {
+export default function MainContainer({currentUser}) {
+  
     const [posts, setPosts] = useState([]);
     const [topics, setTopics] = useState([]);
     const history = useHistory();
@@ -37,12 +38,14 @@ const handlePostCreate = async (formData) => {
 
   const handlePostUpdate = async (id, formData) => {
     const newPost = await putPost(id, formData);
+    
     setPosts((prevState) =>
       prevState.map((post) => {
         return post.id === Number(id) ? newPost : post;
       })
     );
-    history.push('/posts');
+    
+    
   };
 
   const handlePostDelete = async (id) => {
@@ -56,13 +59,13 @@ const handlePostCreate = async (formData) => {
         <PostEdit posts={posts} handlePostUpdate={handlePostUpdate} />
       </Route>
       <Route path='/posts/new'>
-        <PostCreate handlePostCreate={handlePostCreate} />
+        <PostCreate topics = {topics} handlePostCreate={handlePostCreate} />
       </Route>
       <Route path='/posts/:id'>
         <PostDetail topics={topics} />
       </Route>
       <Route path='/posts'>
-        <Posts posts={posts} handlePostDelete={handlePostDelete} />
+        <Posts currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />
       </Route>
       <Route path='/topics'>
         <Topics topics={topics} />

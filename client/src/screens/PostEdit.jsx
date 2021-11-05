@@ -1,52 +1,97 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
+import { putPost, getPost } from '../services/posts';
+import Layout from '../layouts/Layout';
+
 
 export default function PostEdit(props) {
-  const [formData, setFormData] = useState({
+  
+  const [post, setPost] = useState({
     title: '',
     content: '',
     picture: '',
   });
-  const { title } = formData;
-  const { id } = useParams();
-  const { posts, handlePostUpdate } = props;
+  const [isUpdated, setUpdated] = useState(false);
+  let { id } = useParams();
 
   useEffect(() => {
-    const prefillFormData = () => {
-      const postItem = posts.find(post => post.id === Number(id))
-      setFormData({
-        title: postItem.title,
-        content: postItem.content,
-        picture: postItem.picture
-      })
+    const fetchPost = async () => {
+      const post = await getPost(id);
+      setPost(post);
     };
-    if (posts.length) {
-      prefillFormData();
-    }
-  }, [posts, id]);
+    fetchPost();
+  }, [id]);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
-    setFormData({
-      ...formData,
+    setPost({
+      ...post,
       [name]: value
     })
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const updated = await putPost(id, post);
+    setUpdated(updated);
+  };
+
+  if (isUpdated) {
+    
+    return <Redirect to={`/posts`} />;
+    
+  }
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handlePostUpdate(id, formData);
-      }}
-    >
-      <h1>Edit post</h1>
-      <label>
-        Title:
-        <input type='text' name = "title" value={title} onChange={handleChange} />
-      </label>
-      <br />
-      <button>Submit</button>
-    </form>
+    <div user={props.currentUser}>
+      <div className="">
+        <h1 className="">Edit Your Post</h1>
+        <div className="">
+          <div className="">
+            <img
+              className=""
+              src={post.picture}
+              alt={post.title}
+            />
+          </div>
+          <div className="">
+            <form className="" onSubmit={handleSubmit}>
+              <div className="">
+                <label className="">post Name</label>
+                <input
+                  autoFocus
+                  className=""
+                  placeholder="Title"
+                  value={post.title}
+                  name="title"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="">
+                <label className="">
+                  post content
+                </label>
+                <textarea
+                  className=""
+                  rows={5}
+                  cols={78}
+                  placeholder="content"
+                  value={post.content}
+                  name="content"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+              <button
+                type="submit"
+                className=""
+              >
+                Save
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

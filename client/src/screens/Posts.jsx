@@ -1,16 +1,25 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 
 export default function Posts(props) {
-  const { posts, handlePostDelete } = props;
+  const [ allPosts, setAllPosts] = useState([])
+  const { posts, handlePostDelete, currentUser } = props;
+
+  useEffect(() => {
+    setAllPosts(posts)
+  }, [posts])
+  
   return (
     <div>
+      {currentUser &&
+      <>
       <h3>Posts</h3>
-      {posts.map((post) => (
+      { allPosts.map((post) => (
         <div key={post.id}>
           <Link to={`/posts/${post.id}`}>
             <p>{post.title}</p>
-            <p>{post.content}</p>
-            <img src = {post.title} />
+            <img src = {post.picture} />
           </Link>
           <Link to={`/posts/${post.id}/edit`}>
             <button>edit</button>
@@ -21,6 +30,8 @@ export default function Posts(props) {
       <Link to='/posts/new'>
         <button>create</button>
       </Link>
+      </>
+      }
     </div>
   );
 }
