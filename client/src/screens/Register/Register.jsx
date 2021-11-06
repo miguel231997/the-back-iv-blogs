@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import './Register.css'
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -23,58 +23,62 @@ export default function Register(props) {
 
   return (
       
-    <form
+    <form className="register-form center pa5 br2-ns b--black-10"
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }}
     >
       <h3>Register</h3>
-      <label>
+      <label className="white db fw6 lh-copy f6">
         First Name:
-        <input
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='first_name'
           value={first_name}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="white db fw6 lh-copy f6">
         Last Name:
-        <input
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='last_name'
           value={last_name}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="white db fw6 lh-copy f6">
         Username:
-        <input
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='username'
           value={username}
           onChange={handleChange}
         />
-      </label>
+      </label >
       <br />
-      <label>
+      <label className="white db fw6 lh-copy f6">
         Email:
-        <input type='text' name='email' value={email} onChange={handleChange} />
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15" 
+        type='text' 
+        name='email' 
+        value={email} 
+        onChange={handleChange} />
       </label>
       <br />
-      <label>
+      <label className="white db fw6 lh-copy f6">
         Profile Picture:
-        <input
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='profile_picture'
           value={profile_picture}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="white db fw6 lh-copy f6">
         Password:
-        <input
+        <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='password'
           name='password'
           value={password}

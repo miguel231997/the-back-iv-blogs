@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom'
 import  { deletePost, getAllPosts, postPost, putPost }  from '../services/posts';
 import { getAllTopics } from '../services/topics';
+import { getAllComments } from '../services/comments';
 import Posts from '../screens/Posts';
 import PostCreate from '../screens/PostCreate';
 import PostEdit from '../screens/PostEdit';
@@ -11,8 +12,17 @@ import PostDetail from '../screens/PostDetail';
 export default function MainContainer({currentUser}) {
   
     const [posts, setPosts] = useState([]);
+    const [comments, setComments] = useState([]);
     const [topics, setTopics] = useState([]);
     const history = useHistory();
+
+    useEffect(() => {
+      const fetchComments = async () =>{
+        const commentsList = await getAllComments();
+          setComments(commentsList)
+        };
+    fetchComments();    
+},[]);
 
     useEffect(() => {
       const fetchPosts = async () =>{
@@ -62,7 +72,7 @@ const handlePostCreate = async (formData) => {
         <PostCreate topics = {topics} handlePostCreate={handlePostCreate} />
       </Route>
       <Route path='/posts/:id'>
-        <PostDetail topics={topics} />
+        <PostDetail comments = {comments} topics={topics} />
       </Route>
       <Route path='/posts'>
         <Posts currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />

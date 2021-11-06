@@ -21,10 +21,10 @@ export default function Layout(props) {
             </div>
             <div className = "landing-page-buttons">
               <div>
-                <button className = "left-button w-100 f6 link dim ba bw1 ph3 pv2 mb2 dib black"><Link className = "login black" to='/login'>Login</Link></button>
+                <Link className = "login black" to='/login'><button className = "left-button w-100 f6 link dim ba bw1 ph3 pv2 mb2 dib black">Login</button></Link>
               </div>
               <div>
-              <button className = "right-button w-100 f6 link dim  pv2 mb2 dib white bg-black"><Link className = "register white" to='/register'>Register</Link></button>
+              <Link className = "register white" to='/register'><button className = "right-button w-100 f6 link dim  pv2 mb2 dib white bg-black">Register</button></Link>
               </div>
             </div>
           </div>

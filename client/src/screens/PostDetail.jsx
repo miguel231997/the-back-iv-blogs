@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Comments from "../containers/Comments";
 import { deletePost, getPost } from '../services/posts';
 
 export default function PostDetail(props) {
@@ -9,6 +10,7 @@ export default function PostDetail(props) {
   const { id } = useParams();
   const history = useHistory();
 
+  const {comments} = props;
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getPost(id);
@@ -48,6 +50,8 @@ export default function PostDetail(props) {
           </button>
         </div>
           </div>
+          <Comments id = { id } comments = {comments} />
+
         </>
       )}
     </div>

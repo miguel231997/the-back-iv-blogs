@@ -1,0 +1,12 @@
+.register-form{
+    height: 100vh;
+    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}

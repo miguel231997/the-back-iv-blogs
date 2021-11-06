@@ -9,7 +9,7 @@ export default function Posts(props) {
   useEffect(() => {
     setAllPosts(posts)
   }, [posts])
-  
+  console.log(posts)
   return (
     <div>
       {currentUser &&
