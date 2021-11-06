@@ -5,6 +5,8 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 
 import Layout from './layouts/Layout';
 import Login from './screens/Login/Login';
+import Register from './screens/Register/Register';
+import MainContainer from './containers/MainContainer';
 
 import {
   loginUser,
@@ -12,8 +14,7 @@ import {
   removeToken,
   verifyUser,
 } from './services/auth';
-import Register from './screens/Register';
-import MainContainer from './containers/MainContainer';
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);

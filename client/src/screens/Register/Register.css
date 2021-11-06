@@ -1,6 +1,8 @@
-.register-form{
+.registerform{
+    
+    
     height: 100vh;
-    border: 5px solid red;
+    
     display: flex;
     justify-content: center;
     align-content: center;
@@ -9,4 +11,5 @@
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
+  
 }

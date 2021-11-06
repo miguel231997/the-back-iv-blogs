@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './Posts.css'
 
 
 export default function Posts(props) {
@@ -9,27 +10,22 @@ export default function Posts(props) {
   useEffect(() => {
     setAllPosts(posts)
   }, [posts])
-  console.log(posts)
+  
   return (
-    <div>
+    <div className = "articlecontainer">
       {currentUser &&
       <>
       <h3>Posts</h3>
       { allPosts.map((post) => (
-        <div key={post.id}>
-          <Link to={`/posts/${post.id}`}>
-            <p>{post.title}</p>
+        <div className = "eachpost">
+          <div className = "eacharticle" key={post.id}>
             <img src = {post.picture} />
-          </Link>
-          <Link to={`/posts/${post.id}/edit`}>
-            <button>edit</button>
-          </Link>
-          <button onClick={() => handlePostDelete(post.id)}>delete</button>
+            <Link to={`/posts/${post.id}`}><p>{post.title}</p></Link>
+            <Link to={`/posts/${post.id}/edit`}><button>edit</button></Link>
+            <button onClick={() => handlePostDelete(post.id)}>delete</button>
+          </div>
         </div>
       ))}
-      <Link to='/posts/new'>
-        <button>create</button>
-      </Link>
       </>
       }
     </div>

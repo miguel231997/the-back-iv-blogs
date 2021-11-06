@@ -3,7 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom'
 import  { deletePost, getAllPosts, postPost, putPost }  from '../services/posts';
 import { getAllTopics } from '../services/topics';
 import { getAllComments } from '../services/comments';
-import Posts from '../screens/Posts';
+import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate';
 import PostEdit from '../screens/PostEdit';
 import Topics from '../screens/Topics';
@@ -66,19 +66,19 @@ const handlePostCreate = async (formData) => {
   return (
     <Switch>
       <Route path='/posts/:id/edit'>
-        <PostEdit posts={posts} handlePostUpdate={handlePostUpdate} />
+        <PostEdit currentUser = { currentUser } posts={posts} handlePostUpdate={handlePostUpdate} />
       </Route>
       <Route path='/posts/new'>
-        <PostCreate topics = {topics} handlePostCreate={handlePostCreate} />
+        <PostCreate currentUser = { currentUser } topics = {topics} handlePostCreate={handlePostCreate} />
       </Route>
       <Route path='/posts/:id'>
-        <PostDetail comments = {comments} topics={topics} />
+        <PostDetail currentUser = { currentUser } comments = {comments} topics={topics} />
       </Route>
       <Route path='/posts'>
         <Posts currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />
       </Route>
       <Route path='/topics'>
-        <Topics topics={topics} />
+        <Topics currentUser = { currentUser } topics={topics} />
       </Route>
     </Switch>
   );

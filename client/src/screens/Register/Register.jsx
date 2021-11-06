@@ -23,69 +23,88 @@ export default function Register(props) {
 
   return (
       
-    <form className="register-form center pa5 br2-ns b--black-10"
+    <form className="registerform center pa5 br2-ns b--black-10"
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
       }}
     >
-      <h3>Register</h3>
-      <label className="white db fw6 lh-copy f6">
-        First Name:
+      <h3 className="">Register</h3>
+    
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='first_name'
           value={first_name}
           onChange={handleChange}
+          placeholder = 'First Name'
         />
-      </label>
-      <label className="white db fw6 lh-copy f6">
-        Last Name:
+      <div>
+      <br />
+      </div>
+    
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='last_name'
           value={last_name}
           onChange={handleChange}
+          placeholder = 'Last Name'
         />
-      </label>
-      <label className="white db fw6 lh-copy f6">
-        Username:
+      
+      <div>
+      <br />
+      </div>
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='username'
           value={username}
           onChange={handleChange}
+          placeholder = 'username'
         />
-      </label >
+      
+      <div>
       <br />
-      <label className="white db fw6 lh-copy f6">
-        Email:
+      </div>
+    
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15" 
         type='text' 
         name='email' 
         value={email} 
-        onChange={handleChange} />
-      </label>
+        onChange={handleChange} 
+        placeholder = 'email'
+        />
+        
+      
+        <div>
       <br />
-      <label className="white db fw6 lh-copy f6">
-        Profile Picture:
+      </div>
+    
+       
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='profile_picture'
           value={profile_picture}
           onChange={handleChange}
+          placeholder = 'profile picture'
         />
-      </label>
-      <label className="white db fw6 lh-copy f6">
-        Password:
+      
+      <div>
+      <br />
+      </div>
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='password'
           name='password'
           value={password}
           onChange={handleChange}
+          placeholder = 'password'
         />
-      </label>
+
+    <div>
       <br />
+      </div>
       <button>Submit</button>
     </form>
     

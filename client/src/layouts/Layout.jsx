@@ -11,7 +11,10 @@ export default function Layout(props) {
       <header>
         {currentUser ? (
           <div className = "flex">
-            <p>{currentUser.username}</p>
+            <Link to='/posts/new'>
+        <button>Add an article</button>
+      </Link>
+            <p>Welcome {currentUser.username}</p>
             <button onClick={handleLogout}>Logout</button>
           </div>
         ) : (

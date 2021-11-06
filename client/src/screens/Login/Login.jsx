@@ -26,27 +26,35 @@ export default function Login(props) {
       }}
     >
       <h3>Login</h3>
-      <label className="white db fw6 lh-copy f6">
-        Username:
+      
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='text'
           name='username'
           value={username}
           onChange={handleChange}
+          placeholder = 'username'
         />
-      </label >
+      
+      <div>
       <br />
-      <label className="white db fw6 lh-copy f6">
-        Password:
+      </div>
+      
+        
         <input className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
           type='password'
           name='password'
           value={password}
           onChange={handleChange}
+          placeholder = 'password'
         />
-      </label>
+      
       <br />
+      <div>
+      <br />
+      </div>
       <button className = "submit-button center f6 link dim ba bw1 ph3 pv2 mb2 dib black">Submit</button>
+    
     </form>
   );
 }

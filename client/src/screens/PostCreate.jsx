@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { postPost } from '../services/posts';
 import { Redirect } from "react-router-dom";
 
-export default function PostCreate({topics}) {
+export default function PostCreate({topics, currentUser}) {
   const [post, setPost] = useState({
     title: '',
     content: '',
@@ -32,6 +32,7 @@ export default function PostCreate({topics}) {
 
   return (
     <div>
+      {currentUser && 
       <div className="">
         <h1 className="">Create Your Post</h1>
         <div className="">
@@ -89,6 +90,7 @@ export default function PostCreate({topics}) {
           </div>
         </div>
       </div>
+      }
     </div>
   );
 }

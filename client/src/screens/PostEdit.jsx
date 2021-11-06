@@ -43,14 +43,17 @@ export default function PostEdit(props) {
   }
   return (
     <div user={props.currentUser}>
+      {props.currentUser &&
       <div className="">
         <h1 className="">Edit Your Post</h1>
         <div className="">
           <div className="">
-            <img
+            <input
+            placeholder="IMG url"
               className=""
-              src={post.picture}
-              alt={post.title}
+              value={post.picture}
+              name="picture"
+              onChange={handleChange}
             />
           </div>
           <div className="">
@@ -92,6 +95,7 @@ export default function PostEdit(props) {
           </div>
         </div>
       </div>
+}
     </div>
   );
 }

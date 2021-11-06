@@ -25,7 +25,7 @@ export const deleteComment = async (id) => {
   return resp;
 };
 
-export const addCommentToPost = async (postId, id) => {
-  const resp = await api.put(`/posts/${postId}/comments/${id}`);
+export const addCommentToPost = async (commentData, id) => {
+  const resp = await api.post(`/posts/${id}/comments`, { comment: commentData });
   return resp.data;
 };

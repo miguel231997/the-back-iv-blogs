@@ -15,12 +15,14 @@ class CommentsController < ApplicationController
     render json: @comment
   end
 
-  # POST /comments
+  # POST / posts/1/comments
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
     @comment.user = @current_user
+    @comment.post = @post
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @post, include: {comments: {include: {user:{only: [:username, :profile_picture]}}}}, status: :created, location: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
