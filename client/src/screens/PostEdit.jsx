@@ -44,25 +44,26 @@ export default function PostEdit(props) {
   return (
     <div user={props.currentUser}>
       {props.currentUser &&
-      <div className="">
+      <div className="mt6">
         <h1 className="">Edit Your Post</h1>
         <div className="">
           <div className="">
             <input
             placeholder="IMG url"
-              className=""
+              className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
               value={post.picture}
               name="picture"
               onChange={handleChange}
             />
           </div>
+          <br />
           <div className="">
             <form className="" onSubmit={handleSubmit}>
               <div className="">
-                <label className="">post Name</label>
+                <label className=""></label>
                 <input
                   autoFocus
-                  className=""
+                  className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
                   placeholder="Title"
                   value={post.title}
                   name="title"
@@ -70,9 +71,10 @@ export default function PostEdit(props) {
                   onChange={handleChange}
                 />
               </div>
+              <br />
               <div className="">
                 <label className="">
-                  post content
+                  
                 </label>
                 <textarea
                   className=""

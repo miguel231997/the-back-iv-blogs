@@ -33,25 +33,28 @@ export default function PostCreate({topics, currentUser}) {
   return (
     <div>
       {currentUser && 
-      <div className="">
+      <div className="mt6 create-post">
         <h1 className="">Create Your Post</h1>
         <div className="">
           <div className="">
-            <label> article image</label>
-            <input
-              className=""
+            <label></label>
+            <input 
+            placeholder = "image link"
+              className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
               value={post.picture}
               name="picture"
               onChange={handleChange}
             />
+            
           </div>
+          <br />
           <div className="">
             <form className="" onSubmit={handleSubmit}>
               <div className="">
-                <label className="">post Name</label>
+                <label className=""></label>
                 <input
                   autoFocus
-                  className=""
+                  className="pa2 input-reset ba bg-white hover-bg-black hover-white w-15"
                   placeholder="Title"
                   value={post.title}
                   name="title"
@@ -61,7 +64,7 @@ export default function PostCreate({topics, currentUser}) {
               </div>
               <div className="">
                 <label className="">
-                  post content
+                  <br />
                 </label>
                 <textarea
                   className=""
