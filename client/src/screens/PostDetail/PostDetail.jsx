@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import Comments from "../containers/Comments";
-import { deletePost, getPost } from '../services/posts';
-import { addCommentToPost } from '../services/comments'
-import '/PostDetail.css'
+import Comments from "../../containers/Comments";
+import { deletePost, getPost } from '../../services/posts';
+import { addCommentToPost } from '../../services/comments'
+import './PostDetail.css'
+
 
 export default function PostDetail(props) {
   const [post, setPost] = useState(null);
@@ -58,22 +59,24 @@ export default function PostDetail(props) {
             <p>
               <b></b>"{post.content}"
             </p>
-            <Link to="/">
-              <button>Home</button>
-            </Link>
-            <div className="">
-          <button
-            className=""
-            onClick={handleDelete}
-          >
-            Delete
-          </button>
+            <div className = "button-container">
+              <Link to="/">
+                <button className="f6 link dim ba bw1 ph3 pv2 mb2 dib black" >Home</button>
+              </Link>
+              <div className="">
+            <button
+              className="f6 link dim ba bw1 ph3 pv2 mb2 dib black"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+            </div>
         </div>
           </div>
           <Comments id = { id } comments = {post? post.comments:[]} />
-          <form onSubmit={handleSubmit}>
+          <form className = "comment-area" onSubmit={handleSubmit}>
             <textarea name = 'content_comment' onChange = {handleChange} value = {selectedComment.content_comment} />
-            <button>Add a comment</button>
+            <button className = "w-50n center f6 link dim ba bw1 ph3 pv2 mb2 dib black">Add a comment</button>
           </form>
       
         </>

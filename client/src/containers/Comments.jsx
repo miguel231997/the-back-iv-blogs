@@ -15,7 +15,7 @@ export default function Comments(props) {
   
   
   return (
-    <div>
+    <div className = "comment-content ba b--silver">
     
       <>
       <h3>Comments</h3>

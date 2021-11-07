@@ -10,13 +10,12 @@ body {
     
   }
   .posts {
-    background-color: white;
+    
     max-width: 600px;
     padding: 20px;
-    margin: 20px auto;
-    border-radius: 2px;
-    border: .25px lightgrey solid;
+    
     position: relative;
+    
   }
   .avatar {
     border-radius: 50%;
@@ -82,4 +81,10 @@ body {
 
   .thumbsup{
     cursor: pointer;
+  }
+
+  .comment-content{
+     border-color: lightgray;
+     border-radius: 2px;
+
   }

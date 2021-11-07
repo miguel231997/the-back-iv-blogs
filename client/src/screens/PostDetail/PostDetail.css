@@ -1,3 +1,24 @@
 .content-title img {
-    width: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+button{
+    cursor: pointer;
+}
+
+.comment-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 25%;
+    
 }

@@ -7,7 +7,7 @@ import Posts from '../screens/Posts/Posts';
 import PostCreate from '../screens/PostCreate';
 import PostEdit from '../screens/PostEdit';
 import Topics from '../screens/Topics';
-import PostDetail from '../screens/PostDetail';
+import PostDetail from '../screens/PostDetail/PostDetail';
 
 export default function MainContainer({currentUser}) {
   
