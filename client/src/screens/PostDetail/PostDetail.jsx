@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Comments from "../containers/Comments";
 import { deletePost, getPost } from '../services/posts';
 import { addCommentToPost } from '../services/comments'
+import '/PostDetail.css'
 
 export default function PostDetail(props) {
   const [post, setPost] = useState(null);
@@ -46,7 +47,7 @@ export default function PostDetail(props) {
   
   return (
     
-    <div className="article">
+    <div className="article mt6">
       
       {post && (
         <>

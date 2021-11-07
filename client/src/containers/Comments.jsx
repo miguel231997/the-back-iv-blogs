@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import './Comments.css'
 
 
 
@@ -19,13 +20,33 @@ export default function Comments(props) {
       <>
       <h3>Comments</h3>
       { comments.map((comment) => (
-        <div key={comment.id}>
+<div key={comment.id}>
+<div className="posts">
+<div className="information">
+  <img className ="avatar" src={comment.user.profile_picture} alt="profile pic"></img>
+    <div className="timestamp">
+      <h4>{comment.user.username}</h4>
+        
+          </div>
+            </div>
+              <div className = "post-text">
+                <p>{comment.content_comment}</p>
+                  <hr/>
+          </div>
+        
+  </div>
+</div>
+
+
+
+
+        // <div key={comment.id}>
           
-            <p>{comment.content_comment}</p>
-            <p>{comment.user.username}</p>
-            <img src = {comment.user.profile_picture}></img>
+        //     <p>{comment.content_comment}</p>
+        //     <p>{comment.user.username}</p>
+        //     <img src = {comment.user.profile_picture}></img>
     
-        </div>
+        // </div>
       ))}
       </>
       

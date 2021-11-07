@@ -12,18 +12,18 @@ export default function Posts(props) {
   }, [posts])
   
   return (
-    <div className = "articlecontainer">
+   <div className = "articlecontainer mt6">
       {currentUser &&
       <>
       <h3>Posts</h3>
       { allPosts.map((post) => (
-        <div className = "eachpost">
+        
           <div className = "eacharticle" key={post.id}>
             <img src = {post.picture} />
             <Link to={`/posts/${post.id}`}><p>{post.title}</p></Link>
             <Link to={`/posts/${post.id}/edit`}><button>edit</button></Link>
             <button onClick={() => handlePostDelete(post.id)}>delete</button>
-          </div>
+          
         </div>
       ))}
       </>

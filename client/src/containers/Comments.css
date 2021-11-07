@@ -1,0 +1,85 @@
+body {
+    background-color: #e9ebee;
+    color: #1d2129;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .post-container{
+    width: 100%;
+    margin: 0 auto;
+    
+  }
+  .posts {
+    background-color: white;
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 2px;
+    border: .25px lightgrey solid;
+    position: relative;
+  }
+  .avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  .information {
+    display: flex;
+  }
+  .timestamp > * {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  .post-text {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .reaction-bar {
+    width: 100%;
+    display: flex;
+    position: absolute;
+      bottom: 10px;
+    left: 20px;
+    
+  }
+  .time{
+      position: absolute;
+      bottom: 10px;
+    right: 20px;
+      
+  }
+  .time small{
+    color: #385898;
+    font-size: 10px;
+}
+
+
+
+  .reaction-bar,img{
+      width: 15px;
+      height: 15px  
+  }
+  .favoriteteam{
+    position: absolute;
+    top: 0px;
+    right: 20px;
+  }
+  hr {
+    border-top: .5px solid lightgrey;
+  }
+
+  .edit{
+   position: absolute;
+   right: 50%;
+  }
+
+  .feed-divider{
+    border-top: .5px solid black;
+  }
+
+  .thumbsup{
+    cursor: pointer;
+  }

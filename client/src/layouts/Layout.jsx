@@ -10,12 +10,14 @@ export default function Layout(props) {
       <div className = "main">
       <header>
         {currentUser ? (
-          <div className = "flex">
-            <Link to='/posts/new'>
-        <button>Add an article</button>
-      </Link>
-            <p>Welcome {currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+          <div className = "nav">
+            <div className = "add-article">
+              <Link to='/posts/new'>
+                <button className = "w-100 f6 link dim ba bw1 ph3 pv2 mb2 dib black">Add an article</button>
+              </Link>
+            </div>
+            <p className = "welcome">Welcome {currentUser.username}</p>
+            <p className = "log-out" onClick={handleLogout}>Logout</p>
           </div>
         ) : (
           <div className = "image-and-buttons">
@@ -34,9 +36,9 @@ export default function Layout(props) {
         )}
         
         {currentUser && (
-          <div>
-            <Link to='/posts'>Posts</Link>
-            <Link to='/topics'>Topics</Link>
+          <div className = "navigation">
+            <Link to='/posts' className = "mr4 no-underline">Posts</Link>
+            <Link to='/topics'className = "no-underline">Topics</Link>
           </div>
         )}
       </header>
