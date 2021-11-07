@@ -20,7 +20,7 @@ export default function Posts(props) {
         
           <div className = "eacharticle" key={post.id}>
             <img src = {post.picture} />
-            <Link to={`/posts/${post.id}`}><p>{post.title}</p></Link>
+            <Link className = "post-title" to={`/posts/${post.id}`}><p>{post.title}</p></Link>
             <Link to={`/posts/${post.id}/edit`}><button>edit</button></Link>
             <button onClick={() => handlePostDelete(post.id)}>delete</button>
           
