@@ -13,6 +13,7 @@ export default function Comments(props) {
     // eslint-disable-next-line
   }, [comments, props.setToggle])
   
+  console.log(allComments)
   
   
   return (

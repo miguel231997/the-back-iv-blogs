@@ -5,7 +5,7 @@ export default function Topics(props) {
 
   return (
     <div>
-      <h3>Topics</h3>
+      <h3 className = "mt6">Topics</h3>
       {topics.map((topic) => (
         <p key={topic.id}>{topic.name}</p>
       ))}
