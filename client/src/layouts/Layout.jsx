@@ -22,7 +22,7 @@ export default function Layout(props) {
         ) : (
           <div className = "image-and-buttons">
             <div className = "logo-landing-page-image">
-              <img src = {logo}></img>
+              <img src = {logo} alt = "logo"></img>
             </div>
             <div className = "landing-page-buttons">
               <div>
