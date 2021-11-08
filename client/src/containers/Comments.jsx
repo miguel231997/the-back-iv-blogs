@@ -23,7 +23,7 @@ export default function Comments(props) {
 <div key={comment.id}>
 <div className="posts">
 <div className="information">
-  <img className ="avatar" src={comment.user.profile_picture} alt="profile pic"></img>
+  <img className ="avatar" src={comment.user?.profile_picture} alt="profile pic"></img>
     <div className="timestamp">
       <h4>{comment.user.username}</h4>
         

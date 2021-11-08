@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import { putPost, getPost } from '../services/posts';
 import Layout from '../layouts/Layout';
 
@@ -20,7 +20,7 @@ export default function PostEdit(props) {
       setPost(post);
     };
     fetchPost();
-  }, [id]);
+  }, [id, props.toggle]);
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -33,6 +33,7 @@ export default function PostEdit(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const updated = await putPost(id, post);
+    props.setToggle(prevState => !prevState)
     setUpdated(updated);
   };
 
@@ -94,8 +95,15 @@ export default function PostEdit(props) {
                 Save
               </button>
             </form>
+            
           </div>
         </div>
+        <div className = "button-container">
+              <Link to="/posts">
+                <button className="f6 link dim ba bw1 ph3 pv2 mb2 dib black" >Home</button>
+              </Link>
+              </div>
+      
       </div>
 }
     </div>

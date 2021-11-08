@@ -14,6 +14,7 @@ export default function MainContainer({currentUser}) {
     const [posts, setPosts] = useState([]);
     const [comments, setComments] = useState([]);
     const [topics, setTopics] = useState([]);
+    const [toggle, setToggle] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
@@ -30,7 +31,7 @@ export default function MainContainer({currentUser}) {
           setPosts(postList)
         };
     fetchPosts();    
-},[]);
+},[toggle]);
 
 useEffect(() => {
     const fetchTopics = async () => {
@@ -43,12 +44,13 @@ useEffect(() => {
 const handlePostCreate = async (formData) => {
     const newPost = await postPost(formData);
     setPosts((prevState) => [...prevState, newPost]);
+    setToggle(prevState => !prevState)
     history.push('/posts');
   };
 
   const handlePostUpdate = async (id, formData) => {
     const newPost = await putPost(id, formData);
-    
+    setToggle(prevState => !prevState)
     setPosts((prevState) =>
       prevState.map((post) => {
         return post.id === Number(id) ? newPost : post;
@@ -66,16 +68,16 @@ const handlePostCreate = async (formData) => {
   return (
     <Switch>
       <Route path='/posts/:id/edit'>
-        <PostEdit currentUser = { currentUser } posts={posts} handlePostUpdate={handlePostUpdate} />
+        <PostEdit setToggle = {setToggle} currentUser = { currentUser } posts={posts} handlePostUpdate={handlePostUpdate} />
       </Route>
       <Route path='/posts/new'>
-        <PostCreate currentUser = { currentUser } topics = {topics} handlePostCreate={handlePostCreate} />
+        <PostCreate setToggle = {setToggle} currentUser = { currentUser } topics = {topics} handlePostCreate={handlePostCreate} />
       </Route>
       <Route path='/posts/:id'>
         <PostDetail currentUser = { currentUser } comments = {comments} topics={topics} />
       </Route>
       <Route path='/posts'>
-        <Posts currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />
+        <Posts toggle = {toggle} currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />
       </Route>
       <Route path='/topics'>
         <Topics currentUser = { currentUser } topics={topics} />

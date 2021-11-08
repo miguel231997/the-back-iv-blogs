@@ -5,11 +5,12 @@ import './Posts.css'
 
 export default function Posts(props) {
   const [ allPosts, setAllPosts] = useState([])
-  const { posts, handlePostDelete, currentUser } = props;
+  const { posts, handlePostDelete, currentUser, toggle } = props;
+  
 
   useEffect(() => {
     setAllPosts(posts)
-  }, [posts])
+  }, [posts, toggle])
   
   return (
    <div className = "articlecontainer mt6">

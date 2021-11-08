@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { postPost } from '../services/posts';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
-export default function PostCreate({topics, currentUser}) {
+export default function PostCreate({topics, currentUser, setToggle}) {
   const [post, setPost] = useState({
     title: '',
     content: '',
@@ -23,6 +23,7 @@ export default function PostCreate({topics, currentUser}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const created = await postPost(post);
+    setToggle(prevState => !prevState)
     setCreated({created});
   };
 
@@ -90,9 +91,16 @@ export default function PostCreate({topics, currentUser}) {
                 Save
               </button>
             </form>
+            
           </div>
         </div>
+        <div className = "button-container">
+              <Link to="/posts">
+                <button className="f6 link dim ba bw1 ph3 pv2 mb2 dib black" >Home</button>
+              </Link>
+              </div>
       </div>
+      
       }
     </div>
   );
