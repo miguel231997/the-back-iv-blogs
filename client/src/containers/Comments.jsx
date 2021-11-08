@@ -10,6 +10,7 @@ export default function Comments(props) {
 
   useEffect(() => {
     setAllComments(comments.filter(comment => comment.post_id === Number(id)))
+    // eslint-disable-next-line
   }, [comments, props.setToggle])
   
   
