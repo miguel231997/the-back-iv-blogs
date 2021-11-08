@@ -10,7 +10,7 @@ export default function Comments(props) {
 
   useEffect(() => {
     setAllComments(comments.filter(comment => comment.post_id === Number(id)))
-  }, [comments])
+  }, [comments, props.setToggle])
   
   
   
@@ -23,14 +23,14 @@ export default function Comments(props) {
 <div key={comment.id}>
 <div className="posts">
 <div className="information">
-  <img className ="avatar" src={comment.user?.profile_picture} alt="profile pic"></img>
+  <img className ="avatar" src={comment?.user?.profile_picture} alt="profile pic"></img>
     <div className="timestamp">
-      <h4>{comment.user.username}</h4>
+      <h4>{comment?.user.username}</h4>
         
           </div>
             </div>
               <div className = "post-text">
-                <p>{comment.content_comment}</p>
+                <p>{comment?.content_comment}</p>
                   <hr/>
           </div>
         

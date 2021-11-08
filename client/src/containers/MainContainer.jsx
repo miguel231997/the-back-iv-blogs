@@ -74,7 +74,7 @@ const handlePostCreate = async (formData) => {
         <PostCreate setToggle = {setToggle} currentUser = { currentUser } topics = {topics} handlePostCreate={handlePostCreate} />
       </Route>
       <Route path='/posts/:id'>
-        <PostDetail currentUser = { currentUser } comments = {comments} topics={topics} />
+        <PostDetail setToggle = {setToggle}  currentUser = { currentUser } comments = {comments} topics={topics} />
       </Route>
       <Route path='/posts'>
         <Posts toggle = {toggle} currentUser = { currentUser } posts={posts} handlePostDelete={handlePostDelete} />

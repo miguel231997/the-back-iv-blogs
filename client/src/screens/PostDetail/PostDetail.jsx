@@ -73,7 +73,7 @@ export default function PostDetail(props) {
             </div>
         </div>
           </div>
-          <Comments id = { id } comments = {post? post.comments:[]} />
+          <Comments setToggle = {props.setToggle} id = { id } comments = {post? post.comments:[]} />
           <form className = "comment-area" onSubmit={handleSubmit}>
             <textarea name = 'content_comment' onChange = {handleChange} value = {selectedComment.content_comment} />
             <button className = "w-50n center f6 link dim ba bw1 ph3 pv2 mb2 dib black">Add a comment</button>
