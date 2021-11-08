@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
 import { putPost, getPost } from '../services/posts';
-import Layout from '../layouts/Layout';
+
 
 
 export default function PostEdit(props) {

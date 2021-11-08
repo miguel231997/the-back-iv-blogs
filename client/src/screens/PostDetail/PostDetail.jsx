@@ -14,7 +14,7 @@ export default function PostDetail(props) {
   const { id } = useParams();
   const history = useHistory();
 
-  const {comments, currenUser} = props;
+  
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getPost(id);
